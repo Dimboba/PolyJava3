@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Model 0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" afterDir="false" />
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Model 0.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +222,7 @@
       <workItem from="1672021052444" duration="344000" />
       <workItem from="1674151011981" duration="820000" />
       <workItem from="1674248823849" duration="3581000" />
-      <workItem from="1674404738408" duration="4626000" />
+      <workItem from="1674404738408" duration="6594000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -252,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674252842186</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Model 0.2">
+      <created>1674409399703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674409399703</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +281,7 @@
     <MESSAGE value="Created GUI (kinda)" />
     <MESSAGE value="Created GUI 0.1" />
     <MESSAGE value="Model 0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model 0.1" />
+    <MESSAGE value="Model 0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model 0.2" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package org.openjfx;
 
 import Model.GameListener;
+import Model.Model;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 public class MainApp extends Application implements GameListener {
 
+    private Model model;
     @Override
     public void taskCompleted(int left, int lastRow, int lastCellNum) {
 
@@ -29,10 +31,12 @@ public class MainApp extends Application implements GameListener {
         GridPane grid = new GridPane();
         borderPane.setCenter(grid);
 
-        grid.setPadding(new Insets(25, 25, 25, 25));
+        grid.setPadding(new Insets(5, 5, 5, 5));
         grid.setAlignment(Pos.CENTER);
-        grid.add(new Text("Test"), 2, 2);
-        Button btn = new Button();
+        //grid.add(new Text("Test"), 2, 2);
+        for(int i = 0; i < model.numOfRows; i++) {
+            for(int j = 0; j < model.cellsInRow; j++) {
+                Button btn = new Button();
         /* //someTestsOnActions
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -42,8 +46,12 @@ public class MainApp extends Application implements GameListener {
             }
         });
         */
-        grid.add(btn, 0, 0);
-
+                grid.add(btn, i, j);
+            }
+        }
+        HBox hBox = new HBox();
+        hBox.setMinHeight(200);
+        borderPane.setTop(hBox);
         Group root = new Group(borderPane);
         Scene scene = new Scene(root, 500, 500);
         mainStage.setScene(scene);
@@ -52,6 +60,7 @@ public class MainApp extends Application implements GameListener {
     }
     public void start(Stage mainStage) throws Exception{
         //DialogWindow dialogWindow = new DialogWindow();
+        model = new Model();
         buildGUI(mainStage);
         mainStage.show();
 

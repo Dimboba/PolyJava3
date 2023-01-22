@@ -1,12 +1,12 @@
 package Model;
 
-import javax.sound.midi.*;
+//import javax.sound.midi.*;
 import java.util.*;
 import java.math.*;
 
 public class Model {
-    private final int cellsInRow = 5;
-    private final int numOfRows = 5;
+    public final int cellsInRow = 5;
+    public final int numOfRows = 5;
     private final List<Row> rows;
     private List<Cell> task;
     private final List<GameListener> listeners;
@@ -46,7 +46,4 @@ public class Model {
         }
     }
 
-    public void playSound(int row, int cellNum){
-
-    }
 }
