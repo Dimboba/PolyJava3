@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Created GUI 0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Row.java" afterDir="false" />
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Model 0.1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Row.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -73,23 +72,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lazar/eclipse-workspace/BeatBoxFinal",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lazar/eclipse-workspace/BeatBoxFinal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lazar\IDEAprojects\PolyJava3\src\main\java" />
@@ -222,7 +221,8 @@
       <workItem from="1671737656547" duration="2797000" />
       <workItem from="1672021052444" duration="344000" />
       <workItem from="1674151011981" duration="820000" />
-      <workItem from="1674248823849" duration="3538000" />
+      <workItem from="1674248823849" duration="3581000" />
+      <workItem from="1674404738408" duration="4626000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671626741867</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Model 0.1">
+      <created>1674252842186</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674252842186</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +273,7 @@
     <MESSAGE value="JavaFX is working" />
     <MESSAGE value="Created GUI (kinda)" />
     <MESSAGE value="Created GUI 0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created GUI 0.1" />
+    <MESSAGE value="Model 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model 0.1" />
   </component>
 </project>
