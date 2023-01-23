@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Model 0.2">
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="GUI 0.1.1 :)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/AppView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +46,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -222,7 +220,8 @@
       <workItem from="1672021052444" duration="344000" />
       <workItem from="1674151011981" duration="820000" />
       <workItem from="1674248823849" duration="3581000" />
-      <workItem from="1674404738408" duration="6594000" />
+      <workItem from="1674404738408" duration="7279000" />
+      <workItem from="1674492993993" duration="677000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -259,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674409399703</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="GUI 0.1.1 :)">
+      <created>1674411371375</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674411371375</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +288,7 @@
     <MESSAGE value="Created GUI 0.1" />
     <MESSAGE value="Model 0.1" />
     <MESSAGE value="Model 0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model 0.2" />
+    <MESSAGE value="GUI 0.1.1 :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.1.1 :)" />
   </component>
 </project>
