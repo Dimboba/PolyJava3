@@ -10,7 +10,7 @@ public class Model {
     private final List<Row> rows;
     private List<Cell> task;
     private final List<GameListener> listeners;
-    private final int instruments[] = {50,60,70,72,64,56,58,47,67,63};
+    private final int[] instruments = {50,60,70,72,64,56,58,47,67,63};
 
     private Cell getCell(int row, int cellNum){
         return rows.get(row).getCell(cellNum);
@@ -33,6 +33,9 @@ public class Model {
                     ((int) (Math.random()*numOfRows), (int) (Math.random()*cellsInRow)));
         }
         //task = Collections.unmodifiableList(task);
+        for(GameListener listener: listeners){
+            listener.taskCreated();
+        }
     }
     public void completeTask(int row, int cellNum){
         if(task.get(task.size() - 1) == this.getCell(row, cellNum)) {
@@ -45,5 +48,7 @@ public class Model {
             listener.taskCompleted(-1, row, cellNum);
         }
     }
-
+    public void createTaskSeries(int startNumber){
+        createTask(startNumber);
+    }
 }

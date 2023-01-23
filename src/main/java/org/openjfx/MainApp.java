@@ -4,7 +4,9 @@ import Model.GameListener;
 import Model.Model;
 import javafx.application.*;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.*;
@@ -17,50 +19,80 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 import java.util.Optional;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainApp extends Application implements GameListener {
 
     private Model model;
+
     @Override
     public void taskCompleted(int left, int lastRow, int lastCellNum) {
 
     }
 
-    private void buildGUI(Stage mainStage){
-        BorderPane borderPane = new BorderPane();
-        GridPane grid = new GridPane();
-        borderPane.setCenter(grid);
+    @Override
+    public void taskCreated() {
 
-        grid.setPadding(new Insets(5, 5, 5, 5));
+    }
+
+    private void buildGUI(Stage mainStage){
+        BorderPane root = new BorderPane();
+
+        GridPane grid = new GridPane();
+        /*
+        AnchorPane anchorPane = new AnchorPane();
+        AnchorPane.setTopAnchor(grid, 10d);
+        AnchorPane.setBottomAnchor(grid, 10d);
+        AnchorPane.setLeftAnchor(grid, 10d);
+        AnchorPane.setRightAnchor(grid, 10d);
+        anchorPane.getChildren().add(grid);
+*/
+        root.setCenter(grid);
+        grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setAlignment(Pos.CENTER);
-        //grid.add(new Text("Test"), 2, 2);
         for(int i = 0; i < model.numOfRows; i++) {
+            RowConstraints row = new RowConstraints();
+            row.setPercentHeight(100d/model.numOfRows);
+            grid.getRowConstraints().add(row);
+            ColumnConstraints col = new ColumnConstraints();
+            col.setPercentWidth(100d/model.cellsInRow);
+            grid.getColumnConstraints().add(col);
             for(int j = 0; j < model.cellsInRow; j++) {
                 Button btn = new Button();
-        /* //someTestsOnActions
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                //btn.setColor(Color.FIREBRICK);
-                btn.setText("Sign in button pressed");
-            }
-        });
-        */
-                grid.add(btn, i, j);
+                String previousStyle = btn.getStyle();
+                btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+                grid.add(btn, j, i);
+                btn.setOnAction(e->{
+                    btn.setText("Click!");
+                    btn.setStyle("-fx-background-color: #ff0080; ");
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        public void run() {
+                            Platform.setImplicitExit(false);
+                            Platform.runLater(() -> {
+                                btn.setStyle(previousStyle);
+                                btn.setText("");
+                                timer.cancel();
+                                timer.purge();
+                            });
+                        }
+                    }, 500);
+
+                });
             }
         }
-        HBox hBox = new HBox();
-        hBox.setMinHeight(200);
-        borderPane.setTop(hBox);
-        Group root = new Group(borderPane);
+
         Scene scene = new Scene(root, 500, 500);
         mainStage.setScene(scene);
         mainStage.setTitle("Testing");
+        //mainStage.setResizable(false);
 
     }
     public void start(Stage mainStage) throws Exception{
         //DialogWindow dialogWindow = new DialogWindow();
         model = new Model();
+        model.addListener(this);
         buildGUI(mainStage);
         mainStage.show();
 
