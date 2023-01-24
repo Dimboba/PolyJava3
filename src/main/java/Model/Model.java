@@ -5,20 +5,20 @@ import java.util.*;
 import java.math.*;
 
 public class Model {
-    public final int cellsInRow = 5;
+    public final int numOfColumns = 5;
     public final int numOfRows = 5;
     private final List<Row> rows;
     private List<Cell> task;
     private final List<GameListener> listeners;
     private final int[] instruments = {50,60,70,72,64,56,58,47,67,63};
 
-    private Cell getCell(int row, int cellNum){
-        return rows.get(row).getCell(cellNum);
+    public Cell getCell(int row, int column){
+        return rows.get(row).getCell(column);
     }
     public Model(){
         rows = new ArrayList<Row>(0);
         for(int i = 0; i < numOfRows; i++){
-            rows.add(new Row(cellsInRow, instruments[i]));
+            rows.add(new Row(numOfRows, i));
         }
         listeners = new ArrayList<>(0);
     }
@@ -30,22 +30,22 @@ public class Model {
         task = new ArrayList<Cell>(0);
         for(int i = 0; i < numberOfNotes; i++){
             task.add(getCell
-                    ((int) (Math.random()*numOfRows), (int) (Math.random()*cellsInRow)));
+                    ((int) (Math.random()*numOfRows), (int) (Math.random()*numOfColumns)));
         }
         //task = Collections.unmodifiableList(task);
         for(GameListener listener: listeners){
             listener.taskCreated();
         }
     }
-    public void completeTask(int row, int cellNum){
-        if(task.get(task.size() - 1) == this.getCell(row, cellNum)) {
+    public void completeTask(Cell cell){
+        if(task.get(task.size() - 1) == cell) {
             task.remove(task.size() - 1);
             for(GameListener listener: listeners){
-                listener.taskCompleted(task.size(), row, cellNum);
+                listener.taskCompleted(task.size(), cell);
             }
         }
         for(GameListener listener: listeners){
-            listener.taskCompleted(-1, row, cellNum);
+            listener.taskCompleted(-1, cell);
         }
     }
     public void createTaskSeries(int startNumber){

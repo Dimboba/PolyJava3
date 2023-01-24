@@ -1,7 +1,8 @@
 package org.openjfx;
 
+import Controller.BoardListener;
 import Model.GameListener;
-import Model.Model;
+import Model.*;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -27,7 +28,7 @@ public class MainApp extends Application implements GameListener {
     private Model model;
 
     @Override
-    public void taskCompleted(int left, int lastRow, int lastCellNum) {
+    public void taskCompleted(int left, Cell cell) {
 
     }
 
@@ -38,6 +39,7 @@ public class MainApp extends Application implements GameListener {
 
     private void buildGUI(Stage mainStage){
         BorderPane root = new BorderPane();
+        BoardListener listener = new BoardListener(model);
 
         GridPane grid = new GridPane();
         /*
@@ -56,10 +58,10 @@ public class MainApp extends Application implements GameListener {
             row.setPercentHeight(100d/model.numOfRows);
             grid.getRowConstraints().add(row);
             ColumnConstraints col = new ColumnConstraints();
-            col.setPercentWidth(100d/model.cellsInRow);
+            col.setPercentWidth(100d/model.numOfColumns);
             grid.getColumnConstraints().add(col);
-            for(int j = 0; j < model.cellsInRow; j++) {
-                Button btn = new Button();
+            for(int j = 0; j < model.numOfColumns; j++) {
+                CellButton btn = new CellButton(model.getCell(i, j), listener);
                 String previousStyle = btn.getStyle();
                 btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
                 grid.add(btn, j, i);
@@ -69,13 +71,12 @@ public class MainApp extends Application implements GameListener {
                     Timer timer = new Timer();
                     timer.schedule(new TimerTask() {
                         public void run() {
-                            Platform.setImplicitExit(false);
                             Platform.runLater(() -> {
                                 btn.setStyle(previousStyle);
                                 btn.setText("");
-                                timer.cancel();
-                                timer.purge();
-                            });
+                               });
+                            timer.cancel();
+                            timer.purge();
                         }
                     }, 500);
 

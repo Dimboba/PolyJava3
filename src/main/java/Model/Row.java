@@ -3,15 +3,14 @@ package Model;
 import java.util.*;
 
 public class Row {
-    private List<Cell> row = new ArrayList<>();
-    protected Cell getCell(int cellNum){
-        return row.get(cellNum);
+    private List<Cell> cells = new ArrayList<>();
+    protected Cell getCell(int column){
+        return cells.get(column);
     }
-    public Row(int numOfCells, int instrument){
+    public Row(int row, int numOfColumns){
         int minNote = 30, maxNote = 120;
-        for(int i = 0; i < numOfCells; i++){
-            row.add(new Cell(instrument,
-                    minNote + ((maxNote - minNote) / numOfCells) * i));
+        for(int i = 0; i < numOfColumns; i++){
+            cells.add(new Cell(row, i));
         }
 
     }

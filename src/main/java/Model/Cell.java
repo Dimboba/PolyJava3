@@ -3,11 +3,11 @@ package Model;
 import javax.sound.midi.*;
 
 public class Cell {
-    private int instrument;
-    private int note;
+    private int column;
+    private int row;
 
-    public Cell(int instrument, int note) {
-        this.instrument = instrument;
-        this.note = note;
+    public Cell(int row, int column) {
+        this.row = row;
+        this.column = column;
     }
 }
