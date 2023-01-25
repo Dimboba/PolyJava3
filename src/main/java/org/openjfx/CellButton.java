@@ -16,17 +16,21 @@ public class CellButton extends Button {
     private Cell cell;
     private CellListener listener;
     private Model model;
+    private String baseStyle;
     public CellButton(Cell cell, Model model, CellListener listener){
         super();
         this.cell = cell;
         this.model = model;
         this.listener = listener;
         this.setOnAction(e -> {
+            //System.out.println("MouseClicked");
             listener.cellClicked(cell);
         });
+        String previousStyle = this.getStyle();
     }
 
     public void paint(boolean mistake){
+        //System.out.println(mistake);
         String previousStyle = this.getStyle();
         this.setText("Click!");
         if(mistake)
@@ -36,8 +40,9 @@ public class CellButton extends Button {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
+
                 Platform.runLater(() -> {
-                    CellButton.this.setStyle(previousStyle);
+                    CellButton.this.setStyle(baseStyle);
                     CellButton.this.setText("");
                 });
                 timer.cancel();

@@ -27,6 +27,7 @@ public class Model {
         listeners.add(listener);
     }
 
+
     public boolean taskActive(){
         if(task == null) return false;
         return task.size() > 0;
@@ -37,9 +38,9 @@ public class Model {
             task.add(getCell
                     ((int) (Math.random()*numOfRows), (int) (Math.random()*numOfColumns)));
         }
-        //task = Collections.unmodifiableList(task);
+        List<Cell> taskCopy = Collections.unmodifiableList(task);
         for(GameListener listener: listeners){
-            listener.taskCreated();
+            listener.taskCreated(taskCopy);
         }
     }
     public void completeTask(Cell cell){
@@ -48,6 +49,7 @@ public class Model {
             for(GameListener listener: listeners){
                 listener.taskCompleted(task.size(), cell);
             }
+            return;
         }
         for(GameListener listener: listeners){
             listener.taskCompleted(-1, cell);

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="GUI 0.2: add CellListener">
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/ApplicationView.java" afterDir="false" />
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="GUI 0.2: add BoardListener">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/BoardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/BoardListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Row.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
@@ -284,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674565187295</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="GUI 0.2: add BoardListener">
+      <created>1674671113618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674671113618</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +316,7 @@
     <MESSAGE value="GUI 0.1.1 :)" />
     <MESSAGE value="GUI 0.2: Field is real, Controllers are not" />
     <MESSAGE value="GUI 0.2: add CellListener" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.2: add CellListener" />
+    <MESSAGE value="GUI 0.2: add BoardListener" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.2: add BoardListener" />
   </component>
 </project>
