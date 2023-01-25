@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="GUI 0.2: Field is real, Controllers are not">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/BoardListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/CellListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" afterDir="false" />
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="GUI 0.2: add CellListener">
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/ApplicationView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/BoardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/BoardListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -279,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674507793008</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="GUI 0.2: add CellListener">
+      <created>1674565187295</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674565187295</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +309,7 @@
     <MESSAGE value="Model 0.2" />
     <MESSAGE value="GUI 0.1.1 :)" />
     <MESSAGE value="GUI 0.2: Field is real, Controllers are not" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.2: Field is real, Controllers are not" />
+    <MESSAGE value="GUI 0.2: add CellListener" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI 0.2: add CellListener" />
   </component>
 </project>

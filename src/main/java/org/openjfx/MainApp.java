@@ -26,7 +26,6 @@ import java.util.TimerTask;
 public class MainApp extends Application implements GameListener {
 
     private Model model;
-
     @Override
     public void taskCompleted(int left, Cell cell) {
 
@@ -37,7 +36,8 @@ public class MainApp extends Application implements GameListener {
 
     }
 
-    private void buildGUI(Stage mainStage){
+    public void buildGUI(Stage mainStage){
+
         BorderPane root = new BorderPane();
         BoardListener listener = new BoardListener(model);
 
@@ -61,26 +61,9 @@ public class MainApp extends Application implements GameListener {
             col.setPercentWidth(100d/model.numOfColumns);
             grid.getColumnConstraints().add(col);
             for(int j = 0; j < model.numOfColumns; j++) {
-                CellButton btn = new CellButton(model.getCell(i, j), listener);
-                String previousStyle = btn.getStyle();
+                CellButton btn = new CellButton(model.getCell(i, j), model, listener);
                 btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
                 grid.add(btn, j, i);
-                btn.setOnAction(e->{
-                    btn.setText("Click!");
-                    btn.setStyle("-fx-background-color: #ff0080; ");
-                    Timer timer = new Timer();
-                    timer.schedule(new TimerTask() {
-                        public void run() {
-                            Platform.runLater(() -> {
-                                btn.setStyle(previousStyle);
-                                btn.setText("");
-                               });
-                            timer.cancel();
-                            timer.purge();
-                        }
-                    }, 500);
-
-                });
             }
         }
 

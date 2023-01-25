@@ -18,13 +18,18 @@ public class Model {
     public Model(){
         rows = new ArrayList<Row>(0);
         for(int i = 0; i < numOfRows; i++){
-            rows.add(new Row(numOfRows, i));
+            rows.add(new Row(i, numOfColumns));
         }
         listeners = new ArrayList<>(0);
     }
 
     public void addListener(GameListener listener){
         listeners.add(listener);
+    }
+
+    public boolean taskActive(){
+        if(task == null) return false;
+        return task.size() > 0;
     }
     public void createTask(int numberOfNotes){
         task = new ArrayList<Cell>(0);

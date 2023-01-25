@@ -11,6 +11,7 @@ public class BoardListener implements CellListener{
 
     @Override
     public void cellClicked(Cell cell) {
-        model.completeTask(cell);
+        if(model.taskActive())
+            model.completeTask(cell);
     }
 }
