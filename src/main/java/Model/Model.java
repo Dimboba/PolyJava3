@@ -38,7 +38,7 @@ public class Model {
             task.add(getCell
                     ((int) (Math.random()*numOfRows), (int) (Math.random()*numOfColumns)));
         }
-        List<Cell> taskCopy = Collections.unmodifiableList(task);
+        List<Cell> taskCopy = new ArrayList<Cell>(task);
         for(GameListener listener: listeners){
             listener.taskCreated(taskCopy);
         }

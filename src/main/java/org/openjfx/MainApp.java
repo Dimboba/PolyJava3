@@ -35,9 +35,18 @@ public class MainApp extends Application implements GameListener {
 
     @Override
     public void taskCreated(List<Cell> taskCopy) {
-        for(int i = taskCopy.size() - 1; i >= 0; i--){
-            board.getCellButton(taskCopy.get(i)).paint(false);
-        }
+        Timeline fiveSecondsWonder = new Timeline(
+                new KeyFrame(Duration.seconds(2),
+                        new EventHandler<ActionEvent>() {
+
+                            @Override
+                            public void handle(ActionEvent event) {
+                                board.getCellButton(taskCopy.get(taskCopy.size()-1)).paint(false);
+                                taskCopy.remove(taskCopy.size()-1);
+                            }
+                        }));
+        fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
+        fiveSecondsWonder.play();
     }
 
     public void buildGUI(Stage mainStage){

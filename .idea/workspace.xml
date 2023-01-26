@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Alpha version - need to remake taskCreated">
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="add equals and hasCode to Cell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +222,7 @@
       <workItem from="1674248823849" duration="3581000" />
       <workItem from="1674404738408" duration="7279000" />
       <workItem from="1674492993993" duration="677000" />
-      <workItem from="1674719804623" duration="3746000" />
+      <workItem from="1674719804623" duration="4554000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -295,7 +294,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674683118703</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add equals and hasCode to Cell">
+      <created>1674743513050</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674743513050</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add equals and hasCode to Cell">
+      <created>1674743551347</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674743551347</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +336,7 @@
     <MESSAGE value="GUI 0.2: add CellListener" />
     <MESSAGE value="GUI 0.2: add BoardListener" />
     <MESSAGE value="Alpha version - need to remake taskCreated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alpha version - need to remake taskCreated" />
+    <MESSAGE value="add equals and hasCode to Cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="add equals and hasCode to Cell" />
   </component>
 </project>
