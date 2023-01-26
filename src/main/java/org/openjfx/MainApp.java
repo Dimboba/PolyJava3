@@ -35,18 +35,15 @@ public class MainApp extends Application implements GameListener {
 
     @Override
     public void taskCreated(List<Cell> taskCopy) {
-        Timeline fiveSecondsWonder = new Timeline(
-                new KeyFrame(Duration.seconds(2),
-                        new EventHandler<ActionEvent>() {
-
-                            @Override
-                            public void handle(ActionEvent event) {
-                                board.getCellButton(taskCopy.get(taskCopy.size()-1)).paint(false);
-                                taskCopy.remove(taskCopy.size()-1);
-                            }
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.millis(750),
+                        ev -> {
+                            board.getCellButton(taskCopy.get(taskCopy.size()-1)).paint(false);
+                            taskCopy.remove(taskCopy.size()-1);
                         }));
-        fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
-        fiveSecondsWonder.play();
+        timeline.setCycleCount(taskCopy.size());
+        timeline.play();
+
     }
 
     public void buildGUI(Stage mainStage){
@@ -63,7 +60,8 @@ public class MainApp extends Application implements GameListener {
         mainStage.setAlwaysOnTop(true);
     }
     public void start(Stage mainStage) throws Exception{
-        //DialogWindow dialogWindow = new DialogWindow();
+        DialogWindow dialogWindow = new DialogWindow();
+        dialogWindow.showAndWait();
         model = new Model();
         model.addListener(this);
         buildGUI(mainStage);

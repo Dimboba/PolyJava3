@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="add equals and hasCode to Cell">
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Alpha IS DONE! Yeah Ya">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +224,7 @@
       <workItem from="1674248823849" duration="3581000" />
       <workItem from="1674404738408" duration="7279000" />
       <workItem from="1674492993993" duration="677000" />
-      <workItem from="1674719804623" duration="4554000" />
+      <workItem from="1674719804623" duration="8817000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -308,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674743551347</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Alpha IS DONE! Yeah Ya">
+      <created>1674744557443</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674744557443</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +346,7 @@
     <MESSAGE value="GUI 0.2: add BoardListener" />
     <MESSAGE value="Alpha version - need to remake taskCreated" />
     <MESSAGE value="add equals and hasCode to Cell" />
-    <option name="LAST_COMMIT_MESSAGE" value="add equals and hasCode to Cell" />
+    <MESSAGE value="Alpha IS DONE! Yeah Ya" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alpha IS DONE! Yeah Ya" />
   </component>
 </project>

@@ -40,7 +40,6 @@ public class CellButton extends Button {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
-
                 Platform.runLater(() -> {
                     CellButton.this.setStyle(baseStyle);
                     CellButton.this.setText("");
