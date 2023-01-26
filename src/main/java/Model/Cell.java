@@ -4,8 +4,8 @@ import javax.sound.midi.*;
 import java.util.Objects;
 
 public class Cell {
-    private int column;
-    private int row;
+    private final int column;
+    private final int row;
 
     public Cell(int row, int column) {
         this.row = row;
