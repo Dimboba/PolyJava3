@@ -8,13 +8,15 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.event.ActionEvent;
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -36,7 +38,6 @@ public class MainApp extends Application implements GameListener {
         for(int i = taskCopy.size() - 1; i >= 0; i--){
             board.getCellButton(taskCopy.get(i)).paint(false);
         }
-        //?!?!?!?
     }
 
     public void buildGUI(Stage mainStage){
@@ -46,7 +47,6 @@ public class MainApp extends Application implements GameListener {
 
         board = new Board(model, listener);
         root.setCenter(board);
-
         Scene scene = new Scene(root, 500, 500);
         mainStage.setScene(scene);
         mainStage.setTitle("Testing");
