@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="Alpha IS DONE! Yeah Ya">
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="taskCreated upgrade, DialogWindow is started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/CellButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
     </list>
@@ -224,7 +224,8 @@
       <workItem from="1674248823849" duration="3581000" />
       <workItem from="1674404738408" duration="7279000" />
       <workItem from="1674492993993" duration="677000" />
-      <workItem from="1674719804623" duration="8817000" />
+      <workItem from="1674719804623" duration="9481000" />
+      <workItem from="1674997419141" duration="5969000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -317,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674744557443</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="taskCreated upgrade, DialogWindow is started">
+      <created>1674766845964</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674766845964</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +355,7 @@
     <MESSAGE value="Alpha version - need to remake taskCreated" />
     <MESSAGE value="add equals and hasCode to Cell" />
     <MESSAGE value="Alpha IS DONE! Yeah Ya" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alpha IS DONE! Yeah Ya" />
+    <MESSAGE value="taskCreated upgrade, DialogWindow is started" />
+    <option name="LAST_COMMIT_MESSAGE" value="taskCreated upgrade, DialogWindow is started" />
   </component>
 </project>

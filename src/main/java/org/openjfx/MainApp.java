@@ -11,14 +11,13 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class MainApp extends Application implements GameListener {
 
@@ -59,14 +58,21 @@ public class MainApp extends Application implements GameListener {
         //mainStage.setResizable(false);
         mainStage.setAlwaysOnTop(true);
     }
+
+
     public void start(Stage mainStage) throws Exception{
         DialogWindow dialogWindow = new DialogWindow();
-        dialogWindow.showAndWait();
-        model = new Model();
-        model.addListener(this);
-        buildGUI(mainStage);
-        mainStage.show();
-        model.createTask(3);
+        Optional<ButtonType> result = dialogWindow.showAndWait();
+        System.out.println(dialogWindow.getBoardSize());
+        if(result.isPresent() && result.get().getButtonData() == ButtonBar.ButtonData.OK_DONE)
+        {
+            model = new Model();
+            model.addListener(this);
+            buildGUI(mainStage);
+            mainStage.show();
+            model.createTask(3);
+        }
+
     }
     public static void main(String[] args){
         launch(args);

@@ -15,14 +15,17 @@ public class Model {
     public Cell getCell(int row, int column){
         return rows.get(row).getCell(column);
     }
-    public Model(){
+
+    public Model(int numOfRows, int numOfColumns){
         rows = new ArrayList<Row>(0);
         for(int i = 0; i < numOfRows; i++){
             rows.add(new Row(i, numOfColumns));
         }
         listeners = new ArrayList<>(0);
     }
-
+    public Model(){
+        this(5, 5);
+    }
     public void addListener(GameListener listener){
         listeners.add(listener);
     }
@@ -32,9 +35,9 @@ public class Model {
         if(task == null) return false;
         return task.size() > 0;
     }
-    public void createTask(int numberOfNotes){
+    public void createTask(int numberOfCells){
         task = new ArrayList<Cell>(0);
-        for(int i = 0; i < numberOfNotes; i++){
+        for(int i = 0; i < numberOfCells; i++){
             task.add(getCell
                     ((int) (Math.random()*numOfRows), (int) (Math.random()*numOfColumns)));
         }
