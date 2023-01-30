@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="DialogWindow 0.5">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/TopBar.java" afterDir="false" />
+    <list default="true" id="04627100-762c-41aa-95e7-212dc87dfccb" name="Changes" comment="DialogWindow is Done, TopBar started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GameListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/DialogWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openjfx/TopBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openjfx/TopBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,8 @@
       <workItem from="1674492993993" duration="677000" />
       <workItem from="1674719804623" duration="9481000" />
       <workItem from="1674997419141" duration="6016000" />
-      <workItem from="1675084135878" duration="7399000" />
+      <workItem from="1675084135878" duration="7454000" />
+      <workItem from="1675104758839" duration="2440000" />
     </task>
     <task id="LOCAL-00001" summary="JavaFX is working">
       <created>1671148387894</created>
@@ -335,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675003425048</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="DialogWindow is Done, TopBar started">
+      <created>1675091584036</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675091584036</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +373,7 @@
     <MESSAGE value="Alpha IS DONE! Yeah Ya" />
     <MESSAGE value="taskCreated upgrade, DialogWindow is started" />
     <MESSAGE value="DialogWindow 0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="DialogWindow 0.5" />
+    <MESSAGE value="DialogWindow is Done, TopBar started" />
+    <option name="LAST_COMMIT_MESSAGE" value="DialogWindow is Done, TopBar started" />
   </component>
 </project>

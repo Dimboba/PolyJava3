@@ -8,10 +8,17 @@ public class Model {
     public final int numOfColumns;
     public final int numOfRows;
     public int numOfErrors, currErrors;
+
     private final List<Row> rows;
     private List<Cell> task, lastTask;
+    private int numberOfCells;
     private final List<GameListener> listeners;
     private final int[] instruments = {50,60,70,72,64,56,58,47,67,63};
+
+    public int getCurrErrors() { return currErrors; }
+    public int getNumberOfCells() { return numberOfCells; }
+    public int getLeft() { return task.size(); }
+    public int getNumOfErrors() { return numOfErrors; }
 
     public Cell getCell(int row, int column){
         return rows.get(row).getCell(column);
@@ -43,6 +50,7 @@ public class Model {
     }
     public void createTask(int numberOfCells, int numberOfErrors){
         this.numOfErrors = numberOfErrors;
+        this.numberOfCells = numberOfCells;
         currErrors = 0;
         task = new ArrayList<Cell>(0);
         for(int i = 0; i < numberOfCells; i++){
