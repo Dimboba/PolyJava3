@@ -5,10 +5,11 @@ import java.util.*;
 import java.math.*;
 
 public class Model {
-    public final int numOfColumns = 5;
-    public final int numOfRows = 5;
+    public final int numOfColumns;
+    public final int numOfRows;
+    public int numOfErrors, currErrors;
     private final List<Row> rows;
-    private List<Cell> task;
+    private List<Cell> task, lastTask;
     private final List<GameListener> listeners;
     private final int[] instruments = {50,60,70,72,64,56,58,47,67,63};
 
@@ -16,7 +17,9 @@ public class Model {
         return rows.get(row).getCell(column);
     }
 
-    public Model(int numOfRows, int numOfColumns){
+    public Model(int rowsNum, int columnsNum){
+        this.numOfRows = rowsNum;
+        this.numOfColumns = columnsNum;
         rows = new ArrayList<Row>(0);
         for(int i = 0; i < numOfRows; i++){
             rows.add(new Row(i, numOfColumns));
@@ -25,6 +28,9 @@ public class Model {
     }
     public Model(){
         this(5, 5);
+    }
+    public Model(int numOfRowsAndColumns){
+        this(numOfRowsAndColumns, numOfRowsAndColumns);
     }
     public void addListener(GameListener listener){
         listeners.add(listener);
@@ -35,13 +41,16 @@ public class Model {
         if(task == null) return false;
         return task.size() > 0;
     }
-    public void createTask(int numberOfCells){
+    public void createTask(int numberOfCells, int numberOfErrors){
+        this.numOfErrors = numberOfErrors;
+        currErrors = 0;
         task = new ArrayList<Cell>(0);
         for(int i = 0; i < numberOfCells; i++){
             task.add(getCell
                     ((int) (Math.random()*numOfRows), (int) (Math.random()*numOfColumns)));
         }
-        List<Cell> taskCopy = new ArrayList<Cell>(task);
+        List<Cell> taskCopy = new ArrayList<>(task);
+        lastTask = new ArrayList<>(task);
         for(GameListener listener: listeners){
             listener.taskCreated(taskCopy);
         }
@@ -54,11 +63,33 @@ public class Model {
             }
             return;
         }
+        currErrors++;
+        if(currErrors > numOfErrors && numOfErrors != -1)
+        {
+            task = null;
+            for(GameListener listener: listeners){
+                listener.taskFailed(cell);
+            }
+            return;
+        }
+
         for(GameListener listener: listeners){
-            listener.taskCompleted(-1, cell);
+            listener.taskError(currErrors, cell);
         }
     }
+
+    public void restartTask(){
+        currErrors = 0;
+        task = new ArrayList<>(lastTask);
+        List<Cell> taskCopy = new ArrayList<>(task);
+        for(GameListener listener: listeners){
+            listener.taskCreated(taskCopy);
+        }
+    }
+    /*
     public void createTaskSeries(int startNumber){
         createTask(startNumber);
     }
+
+     */
 }

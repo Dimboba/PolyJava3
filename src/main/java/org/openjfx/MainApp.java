@@ -24,12 +24,24 @@ public class MainApp extends Application implements GameListener {
     private Model model;
     private BorderPane root;
     private Board board;
+    private TopBar topBar;
+    private Stage mainStage;
     @Override
     public void taskCompleted(int left, Cell cell) {
-        boolean mistake;
-        mistake = (left == -1);
-        System.out.println(left);
-        board.getCellButton(cell).paint(mistake);
+        System.out.println("Left " + left);
+        board.getCellButton(cell).paint(false);
+    }
+
+    @Override
+    public void taskFailed(Cell cell){
+        System.out.println("Failed");
+        board.getCellButton(cell).paint(true);
+    }
+
+    @Override
+    public void taskError(int errors, Cell cell){
+        System.out.println("Errors " + errors);
+        board.getCellButton(cell).paint(true);
     }
 
     @Override
@@ -45,35 +57,48 @@ public class MainApp extends Application implements GameListener {
 
     }
 
-    public void buildGUI(Stage mainStage){
+    private void buildGUI(Stage mainStage){
 
         root = new BorderPane();
         BoardListener listener = new BoardListener(model);
 
         board = new Board(model, listener);
         root.setCenter(board);
+        topBar = new TopBar(this, mainStage);
+        root.setTop(topBar);
+
         Scene scene = new Scene(root, 500, 500);
         mainStage.setScene(scene);
         mainStage.setTitle("Testing");
         //mainStage.setResizable(false);
-        mainStage.setAlwaysOnTop(true);
+
+        mainStage.show();
     }
 
-
-    public void start(Stage mainStage) throws Exception{
+    public void newGame(){
         DialogWindow dialogWindow = new DialogWindow();
         Optional<ButtonType> result = dialogWindow.showAndWait();
-        System.out.println(dialogWindow.getBoardSize());
         if(result.isPresent() && result.get().getButtonData() == ButtonBar.ButtonData.OK_DONE)
         {
-            model = new Model();
+            model = new Model(dialogWindow.getBoardSize());
             model.addListener(this);
             buildGUI(mainStage);
-            mainStage.show();
-            model.createTask(3);
+            model.createTask(dialogWindow.getDifficulty(), dialogWindow.getErrorsNumber());
+            dialogWindow.close();
         }
 
     }
+
+    public void restartGame(){
+        model.restartTask();
+    }
+    public void start(Stage mainStage) throws Exception{
+        this.mainStage = mainStage;
+        newGame();
+    }
+
+
+
     public static void main(String[] args){
         launch(args);
     }

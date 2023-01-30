@@ -11,6 +11,8 @@ public class DialogWindow extends Dialog<ButtonType> {
 
     private final ToggleGroup errors = new ToggleGroup();
     private final ComboBox<String> comboBox;
+
+    private final Spinner<Integer> difficultySpinner;
     public int getErrorsNumber(){
         RadioButton btn = (RadioButton) errors.getSelectedToggle();
         if(btn.getText().equals('\u221E' + "")) return -1;
@@ -19,6 +21,10 @@ public class DialogWindow extends Dialog<ButtonType> {
 
     public int getBoardSize(){
         return Integer.parseInt(comboBox.getValue().substring(0, 1));
+    }
+
+    public int getDifficulty(){
+        return difficultySpinner.getValue();
     }
 
     public DialogWindow(){
@@ -38,9 +44,9 @@ public class DialogWindow extends Dialog<ButtonType> {
         RadioButton three = new RadioButton("3");
         RadioButton five = new RadioButton("5");
         RadioButton inf = new RadioButton('\u221E' + "");
-        zero.isSelected();
         errors.getToggles().addAll(zero, three, five, inf);
         vbox1.getChildren().addAll(zero, three, five, inf);
+        errors.selectToggle(zero);
 
         Label boardSizeLabel = new Label("Board's size:");
         char times = '\u00D7';
@@ -49,6 +55,12 @@ public class DialogWindow extends Dialog<ButtonType> {
                 3 + t + 3, 4 + t + 4, 5 + t + 5, 6 + t + 6);
         comboBox = new ComboBox<>(comboList);
         comboBox.setValue(4 + t + 4);
-        vbox2.getChildren().addAll(boardSizeLabel, comboBox);
+
+        Label difficultyLabel = new Label("Number of steps:"); // maybe change the Label
+        difficultySpinner = new Spinner<>(3, 30, 3, 3);
+        vbox2.getChildren().addAll(boardSizeLabel, comboBox, difficultyLabel, difficultySpinner);
+
     }
+
+
 }
