@@ -26,10 +26,17 @@ public class MainApp extends Application implements GameListener {
     private Stage mainStage;
     private Label statusLabel;
     private boolean winStatus;
+
+    private boolean soundOn;
+    public boolean isSoundOn() { return soundOn; }
+
+    public void setSoundOn(boolean soundOn) { this.soundOn = soundOn; }
+
+
     @Override
     public void taskCompleted(int left, Cell cell) {
         System.out.println("Left " + left);
-        board.getCellButton(cell).paint(false);
+        board.getCellButton(cell).paintAndPlay(false);
         winStatus = true;
         statusUpgrade();
     }
@@ -37,7 +44,7 @@ public class MainApp extends Application implements GameListener {
     @Override
     public void taskFailed(Cell cell){
         System.out.println("Failed");
-        board.getCellButton(cell).paint(true);
+        board.getCellButton(cell).paintAndPlay(true);
         winStatus = false;
         statusUpgrade();
     }
@@ -45,8 +52,9 @@ public class MainApp extends Application implements GameListener {
     @Override
     public void taskError(int errors, Cell cell){
         System.out.println("Errors " + errors);
-        board.getCellButton(cell).paint(true);
+        board.getCellButton(cell).paintAndPlay(true);
         statusUpgrade();
+
     }
 
     @Override
@@ -67,7 +75,7 @@ public class MainApp extends Application implements GameListener {
         root = new BorderPane();
         BoardListener listener = new BoardListener(model);
 
-        board = new Board(model, listener);
+        board = new Board(model, listener, this);
         root.setCenter(board);
         topBar = new TopBar(this, mainStage);
         root.setTop(topBar);
@@ -79,6 +87,7 @@ public class MainApp extends Application implements GameListener {
         mainStage.setTitle("Testing");
         //mainStage.setResizable(false);
 
+        soundOn = true;
         mainStage.show();
     }
 
@@ -120,7 +129,6 @@ public class MainApp extends Application implements GameListener {
         this.mainStage = mainStage;
         newGame();
     }
-
 
 
     public static void main(String[] args){

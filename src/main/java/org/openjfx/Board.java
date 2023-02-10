@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class Board extends GridPane{
 
     private final HashMap<Cell, CellButton> cellButtonMap;
-    public Board(Model model, CellListener listener) {
+    public Board(Model model, CellListener listener, MainApp mainApp) {
         cellButtonMap = new HashMap<>();
 
         this.setPadding(new Insets(10, 10, 10, 10));
@@ -27,7 +27,7 @@ public class Board extends GridPane{
             this.getColumnConstraints().add(col);
             for (int j = 0; j < model.numOfColumns; j++) {
                 Cell currCell = model.getCell(i, j);
-                CellButton btn = new CellButton(currCell, model, listener);
+                CellButton btn = new CellButton(currCell, model, listener, mainApp);
                 cellButtonMap.put(currCell, btn);
                 btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
                 this.add(btn, j, i);

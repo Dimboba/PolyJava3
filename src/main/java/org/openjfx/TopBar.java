@@ -35,11 +35,11 @@ public class TopBar extends HBox {
         soundButton.setOnAction(ev -> {
             if(soundButton.isSelected()) {
                 soundButton.setText("Sounds On");
-                //врубаем звуки
+                mainApp.setSoundOn(true);
             }
             else{
                 soundButton.setText("Sounds Off");
-                //вырубаем звук
+                mainApp.setSoundOn(false);
             }
         });
         this.getChildren().addAll(menuBar, soundButton);
